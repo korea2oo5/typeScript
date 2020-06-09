@@ -1,18 +1,18 @@
 const NTCID = 'notice/NTCID' as const
 
-export const getNtc = (data: any) => ({
+export const getNtc = (ntcId: any) => ({
     type: NTCID,
-    data
+    ntcId
 });
 
 type NtcAction = ReturnType<typeof getNtc>
 
 type IdState = {
-    data: number
+    ntcId: number
 }
 
 const idInitialState = {
-    data : 0,
+    ntcId : 0,
 }
 
 export default function reducer(state: IdState = idInitialState, action: NtcAction) {
@@ -20,7 +20,7 @@ export default function reducer(state: IdState = idInitialState, action: NtcActi
         case NTCID:
             return {
                 ...state,
-                data: action.data
+                ntcId: action.ntcId
             }
         default:
             return state

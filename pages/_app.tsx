@@ -30,6 +30,15 @@ function initStore() {
 }
 export const wrapper = createWrapper(initStore)
 
+// 이 코드가 있어야 Object.keys(context)에 store가 생김
+WraapedApp.getInitialProps = async ({ctx, Component}) => {
+    return {
+        pageProps: {
+            ...(Component.getInitialProps ? await Component.getInitialProps(ctx) : {}),
+        }
+    }
+}
+
 function WraapedApp({ Component, pageProps}){
     return <Component {...pageProps} />
 }
