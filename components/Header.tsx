@@ -10,8 +10,8 @@ function Header() {
             <Link href="/">
                 <a style={linkStyle}>Home</a>
             </Link>
-            <Link href="/profile">
-                <a style={linkStyle}>Profile</a>
+            <Link href="/user">
+                <a style={linkStyle}>user</a>
             </Link>
         </div>
     )

@@ -10,9 +10,11 @@ function bindMiddleware(middleware){
     }
     return applyMiddleware(...middleware)
 }
+
 const combinedReducer = combineReducers({
     notice
 })
+
 function reducer(state, action) {
     if (action.type === HYDRATE) {
         const nextState = {
@@ -25,12 +27,13 @@ function reducer(state, action) {
         return combinedReducer(state, action)
     }
 }
+
 function initStore() {
     return createStore(reducer, bindMiddleware([thunkMiddleware]))
 }
+
 export const wrapper = createWrapper(initStore)
 
-// 이 코드가 있어야 Object.keys(context)에 store가 생김
 WraapedApp.getInitialProps = async ({ctx, Component}) => {
     return {
         pageProps: {
