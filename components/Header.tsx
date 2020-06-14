@@ -13,6 +13,12 @@ function Header() {
             <Link href="/user">
                 <a style={linkStyle}>user</a>
             </Link>
+            <Link href="/timeScale">
+                <a style={linkStyle}>timeScale</a>
+            </Link>
+            <Link href="/bar">
+                <a style={linkStyle}>bar</a>
+            </Link>
         </div>
     )
 }
