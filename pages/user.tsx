@@ -37,7 +37,7 @@ function User() {
     }
 
     const updateUser = (id, updateUser) => {
-        setEditing(false)
+        // setEditing(false)
 
         setUsers(users.map(user => (user.id === id ? updateUser : user)))
     }

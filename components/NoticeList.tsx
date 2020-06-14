@@ -1,7 +1,7 @@
 import React from "react"
 import Link from 'next/link'
 import {useDispatch} from 'react-redux'
-import { getNtc } from '../modules/notice'
+import { setNtc } from '../modules/notice'
 
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -28,6 +28,7 @@ function NoticeList ({props}: Props) {
     const dispatch = useDispatch()
     return(
         <>
+            <Link href='noticeAdd'><button>등록</button></Link>
             <TableContainer component={Paper}>
                 <Table className={useStyles} size="small" aria-label="a dense table">
                     <TableHead>
@@ -41,7 +42,7 @@ function NoticeList ({props}: Props) {
                     <Link href='/noticeDetail'>
                         <TableBody>
                             {lists.map((list) => (
-                                <TableRow key={list.NTC_ID} onClick={() => dispatch(getNtc(list.NTC_ID))}>
+                                <TableRow key={list.NTC_ID} onClick={() => dispatch(setNtc(list.NTC_ID))}>
                                     <TableCell component="th" scope="row">
                                         {list.NTC_NUM}
                                     </TableCell>

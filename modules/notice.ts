@@ -1,11 +1,11 @@
 const NTCID = 'notice/NTCID' as const;
 
-export const getNtc = (ntcId: any) => ({
+export const setNtc = (ntcId: any) => ({
   type: NTCID,
   ntcId,
 });
 
-type NtcAction = ReturnType<typeof getNtc>;
+type NtcAction = ReturnType<typeof setNtc>;
 
 type IdState = {
   ntcId: number;
